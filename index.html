@@ -1,26 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulador de Cuotas</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
-    <Div class="principal">
-        <div class="titulo"> 
+    <div class="container">
         <h1>Simulador de Cuotas</h1>
-        </div>
-        <p>Presiona el botón para calcular el monto final según las cuotas seleccionadas.</p>
-        <button id="btnSimular">Abrir Calculadora</button>
-    </Div>
+        <form id="formSimulador">
+            <label for="monto">Monto de compra:</label>
+            <input type="number" id="monto" required>
 
-    <div id="resultado">
+            <label for="cuotas">Cantidad de cuotas:</label>
+            <select id="cuotas">
+                <option value="1">1 cuota (sin interés)</option>
+                <option value="3">3 cuotas (10% interés)</option>
+                <option value="6">6 cuotas (20% interés)</option>
+                <option value="12">12 cuotas (35% interés)</option>
+            </select>
 
+            <button type="submit">Calcular</button>
+        </form>
+
+        <div id="resultado"></div>
+
+        <h2>Historial de cálculos</h2>
+        <ul id="historial"></ul>
     </div>
 
-    
-    <script src = "./js/index.js"></script>
+    <script src="js/simulador.js"></script>
 </body>
 </html>
